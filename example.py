@@ -14,7 +14,8 @@ def home():
     url = 'https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=\
     10&aggregate=0&e=Kraken'
     url_output = requests.get(url).json()['Data']
-    return render_template('example.html')
+    links = ['https://www.google.com', 'https://www.duckduckgo.com', 'https://www.github.com']
+    return render_template('example.html', links=links)
 
 
 if __name__ == "__main__":
