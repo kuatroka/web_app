@@ -25,7 +25,7 @@ def home():
     links = ['https://www.google.com', 'https://www.duckduckgo.com', \
     'https://www.github.com']
 
-    return render_template('example.html', links=links)
+    return render_template('example.html', links=links, url_output=url_output[0])
 
 
 

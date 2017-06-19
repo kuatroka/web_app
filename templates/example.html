@@ -9,6 +9,12 @@
 <h1>No variable was passed in.</h1>
 {% endif %}
 
+{% if url_output %}
+<h1>Bitcoin data is: {{ url_output }}</h1>
+{% else %}
+<h1>No variable was passed in.</h1>
+{% endif %}
+
 <h1>This is the example template!</h1>
 
 <p>Blah blah blah</p>
