@@ -13,8 +13,9 @@ def index():
 def example():
     url = 'https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=\
     10&aggregate=0&e=Kraken'
-    url_output = requests.get(url).json()['Data']
-    return render_template('example.html', url_output=url_output[0] )
+    url_output = requests.get(url).json()
+
+    return render_template('example.html', url_output=url_output)
 
 @app.route('/sign')
 def sign():
@@ -27,9 +28,9 @@ def process():
 
     url = 'https://min-api.cryptocompare.com/data/histominute?fsym={0}&tsym={1}&limit=\
     10&aggregate=0&e=Kraken'.format(name[:3], name[3:])
-    url_output = requests.get(url).json()['Data']
+    url_output = requests.get(url).json()['Data'][0]['close']
 
-    return render_template('index.html', name=name, comment=comment, url_output=url_output[0])
+    return render_template('index.html', name=name, comment=comment, url_output=url_output)
 @app.route("/home", methods=['GET', 'POST'])
 def home():
 
